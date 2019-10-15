@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/task1", (req, res) => {
-  let colors = ["Red", "Blue", "Yellow", "Green"];
+  let colors = ["Red", "Blue", "Yellow", "Green", "Black"];
   console.log("Before ", colors);
 
   let result = array_sort.ascending_sort(colors);
