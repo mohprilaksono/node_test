@@ -1,0 +1,22 @@
+{
+  "name": "node_test1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mongoose": "^5.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
