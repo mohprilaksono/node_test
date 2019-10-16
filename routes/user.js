@@ -6,7 +6,7 @@ const {
   getDetail,
   update,
   destroy
-} = require("../actions/users");
+} = require("../actions/user");
 
 router.post("/", async (req, res) => {
   try {
