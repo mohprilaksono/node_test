@@ -7,7 +7,7 @@ require("./db"); // database connection
  */
 const index_routes = require("./routes/index");
 const book_routes = require("./routes/books");
-const users = require("./routes/users");
+const users = require("./routes/user");
 
 // for parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
