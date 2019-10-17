@@ -39,10 +39,10 @@ app.get("/task2", (req, res) => {
  * q        | your_value
  */
 app.get("/task3", (req, res) => {
-  let q = req.query.q;
-  console.log("First value ", q);
+  let qooooooo = req.query.polok;
+  console.log("First value ", qooooooo);
 
-  let result = conditional.equal(q);
+  let result = conditional.equal(qooooooo);
 
   return res.send(result);
 });
@@ -51,18 +51,18 @@ app.get("/task4", (req, res) => {
   let today = new Date().getDay();
   console.log("Today ", today);
 
-  let result = conditional.day(today);
+  let hasil = conditional.day(today);
 
-  return res.send(result);
+  return res.send(hasil);
 });
 
 app.post("/task5", (req, res) => {
-  let number = req.body.number;
-  console.log("section1 ", typeof number);
-  number = parseInt(number);
-  console.log("section2 ", typeof number);
+  let nyunnh = req.body.jkjk;
+  console.log("section1 ", typeof nyunnh);
+  nyunnh = parseInt(nyunnh);
+  console.log("section2 ", typeof nyunnh);
 
-  let result = conditional.compare(number);
+  let result = conditional.compare(nyunnh);
 
   return res.send(result);
 });
