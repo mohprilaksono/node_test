@@ -9,7 +9,7 @@ const map_object = require("./lib/loop/loop_map_object");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  return res.send("Welcome to the bginning of nothingness");
+  return res.send("Welcome to the beginning of nothingness");
 });
 
 app.get("/task1", (req, res) => {
@@ -29,7 +29,7 @@ app.post("/task2", (req, res) => {
 });
 
 app.get("/loop-for", (req, res) => {
-  let data = ["Red", "Blue", "Green"];
+  let data = ["Red", "Blue", "Green", "Yellow"];
   let result = loop_for(data);
 
   return res.send(result);
@@ -49,7 +49,7 @@ app.get("/loop-map", (req, res) => {
   return res.send(result);
 });
 
-app.get("object-loop", (req, res) => {
+app.get("/object-loop", (req, res) => {
   let data = [
     {
       name: "Red",
@@ -67,7 +67,7 @@ app.get("object-loop", (req, res) => {
 
   let result = map_object(data);
 
-  return res, send(result);
+  return res.send(result);
 });
 
 app.listen(3300, () => {
