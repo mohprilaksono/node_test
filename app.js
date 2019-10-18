@@ -13,10 +13,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/task1", (req, res) => {
-  let key1 = req.query.key1;
-  let key2 = req.query.key2;
-
+  let { key1, key2 } = req.query;
   let result = task_condition.task1(key1, key2);
+
+  result.map(v => console.log(`hasil ${v}`));
 
   return res.send(result);
 });
@@ -25,7 +25,7 @@ app.post("/task2", (req, res) => {
   let { name, email } = req.body;
   let result = task_condition.task2(name, email);
 
-  return res.send(result);
+  return res.send(result.email);
 });
 
 app.get("/loop-for", (req, res) => {
@@ -43,7 +43,11 @@ app.get("/loop-foreach", (req, res) => {
 });
 
 app.get("/loop-map", (req, res) => {
-  let data = ["Red", "Blue", "Green"];
+  let data = [
+    "Red", // 0
+    "Blue", // 1
+    "Green" // 2
+  ];
   let result = loop_map(data);
 
   return res.send(result);
@@ -54,15 +58,15 @@ app.get("/object-loop", (req, res) => {
     {
       name: "Red",
       note: "Danger"
-    },
+    }, // 0
     {
       name: "Yellow",
       note: "Warning"
-    },
+    }, // 1
     {
       name: "Green",
       note: "Success"
-    }
+    } // 2
   ];
 
   let result = map_object(data);
