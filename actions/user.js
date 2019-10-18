@@ -23,11 +23,11 @@ const create = async req => {
 const getAll = async () => {
   try {
     let query = await User.find({}).exec();
-    let data = query.map((v, i) => {
+    let data = query.map((value, index) => {
       return {
-        name: v.name,
-        email: v.email,
-        phone: v.phone
+        name: value.name,
+        email: value.email,
+        phone: value.phone
       };
     });
 

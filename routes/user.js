@@ -67,7 +67,7 @@ router.put("/:id", async (req, res) => {
     name,
     email,
     phone,
-    freash
+    fresh
   };
 
   try {
