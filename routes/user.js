@@ -70,6 +70,14 @@ router.put("/:id", async (req, res) => {
     fresh
   };
 
+  // atau
+  /* let updated_data = {
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    fresh: req.body.fresh
+  }*/
+
   try {
     let data = await update(id, updated_data);
 

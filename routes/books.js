@@ -1,21 +1,32 @@
 const express = require("express");
 const router = express.Router();
-const BookModel = require("../models/book");
+const { create, getAll } = require("../actions/books");
+const { isString } = require("lodash");
 
 router.post("/", (req, res) => {
-  let { title, description } = req.body;
-  var insert_data = {
-    title,
-    description
-  };
+  let data = create(req);
 
-  let data = new BookModel(insert_data);
-  data.save();
+  if (isString(data) === true) {
+    return res.status(400).json({
+      status: "error",
+      message: data
+    });
+  }
+
+  return res.status(200).json({
+    status: "succeess",
+    data,
+    message: "Book created successfully!"
+  });
+});
+
+router.get("/", async (req, res) => {
+  let data = await getAll();
 
   return res.send({
-    status: "success",
+    status: "succees",
     data,
-    message: "Book created succesfully!"
+    message: "Get all book data"
   });
 });
 
