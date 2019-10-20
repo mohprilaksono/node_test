@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let bookSchema = new Schema({
-  title: String,
+  title: {
+    type: String,
+    default: null
+  },
   description: String,
   created_at: {
     type: Date,
