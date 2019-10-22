@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const lodash = require("lodash");
 
 const create = async req => {
   let { name, email, phone } = req.body;
@@ -55,7 +56,7 @@ const update = async (id, updated_data) => {
     new: fresh === "true" ? true : false
   };
   let data = {
-    name,
+    name: lodash.lowerCase(name),
     email,
     phone
   };

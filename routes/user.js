@@ -60,8 +60,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
-  let { id } = req.params;
+router.put("/:user_id", async (req, res) => {
+  let { user_id } = req.params;
   let { name, email, phone, fresh } = req.body;
   let updated_data = {
     name,
@@ -79,7 +79,7 @@ router.put("/:id", async (req, res) => {
   }*/
 
   try {
-    let data = await update(id, updated_data);
+    let data = await update(user_id, updated_data);
 
     return res.status(200).json({
       status: "success",
