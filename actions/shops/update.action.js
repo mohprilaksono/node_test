@@ -18,4 +18,4 @@ class Update {
   }
 }
 
-module.exports = Update;
+module.exports = Updat;
